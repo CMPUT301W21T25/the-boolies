@@ -11,6 +11,18 @@ Duncan Krammer
 Samadhi Ranatunga  
 JiaYi Che
 
+**Description**
+Boolies is a experiment crowdsourcing application. Users can setup studies and source participants to conduct experiments and log data. The application is intended to assit studies taht require large repitions of simple actions or simply need to cover a lot of ground. 
+
+
+<img src="https://user-images.githubusercontent.com/42461443/153352587-a465b481-d347-4f90-806b-85af1e051a3b.gif" width="315" height="591"> &nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/42461443/153352595-5a44d1cd-f32a-4d71-aa48-3b6086d672cf.gif" width="315" height="591">
+
+The application also provides simple summary statistics for rudimentary analysis of the data and supports geolocation tagging for experiments.
+
+<img src="https://user-images.githubusercontent.com/42461443/153352609-e9c703dd-32c4-46ef-bf80-de31496df30f.gif" width="315" height="591"> &nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/42461443/153352604-2f05247d-7c73-4b6a-98d8-76232576ffc9.gif" width="315" height="591">
+
+**DEMO:** [boolies.zip](https://github.com/CMPUT301W21T25/the-boolies/files/8038500/boolies.zip)
+
 **Citations**
 
 managers/ForumManager/nestedComments()
@@ -27,6 +39,7 @@ Base Code from: Matthew Mombrea, "How to create nested comments in Java / Androi
      
      * directly below it by order of date
      
+
 
 activities_main/CreatedExperimentsActivity/onTouchEvent() && activites_main/SubbedExperimentsActivity/onTouchEvent()
 
