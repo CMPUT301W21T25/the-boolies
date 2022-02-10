@@ -1,17 +1,11 @@
 # the-boolies
 
-Repo for our Cmput301 Android application.
+Repo for our Cmput301 Android application. The bollies
 
-Contributors:
+**DEMO:** [boolies.zip](https://github.com/CMPUT301W21T25/the-boolies/files/8038500/boolies.zip)
 
-Yalmaz Abdullah  
-Curtis Kennedy  
-Eden Knechtel  
-Duncan Krammer  
-Samadhi Ranatunga  
-JiaYi Che
+**Description:**
 
-**Description**
 Boolies is a experiment crowdsourcing application. Users can setup studies and source participants to conduct experiments and log data. The application is intended to assit studies taht require large repitions of simple actions or simply need to cover a lot of ground. 
 
 
@@ -21,9 +15,16 @@ The application also provides simple summary statistics for rudimentary analysis
 
 <img src="https://user-images.githubusercontent.com/42461443/153352609-e9c703dd-32c4-46ef-bf80-de31496df30f.gif" width="315" height="591"> &nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/42461443/153352604-2f05247d-7c73-4b6a-98d8-76232576ffc9.gif" width="315" height="591">
 
-**DEMO:** [boolies.zip](https://github.com/CMPUT301W21T25/the-boolies/files/8038500/boolies.zip)
+**Contributors:**
 
-**Citations**
+Yalmaz Abdullah  
+Curtis Kennedy  
+Eden Knechtel  
+Duncan Krammer  
+Samadhi Ranatunga  
+JiaYi Che
+
+**Citations:**
 
 managers/ForumManager/nestedComments()
 
