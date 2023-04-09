@@ -110,6 +110,8 @@ public class ExperimentManager {
 
                                                 userManager.FB_UpdateOwnedExperiments(currentOwned,ownerID);
                                                 if (subscribe) {
+                                                    ArrayList<String> currentSubbed = (ArrayList<String>) document.getData().get("subscriptions");
+                                                    currentSubbed.add(documentReference.getId());
                                                     userManager.FB_UpdateSubscriptions(currentOwned, ownerID);
                                                 }
 

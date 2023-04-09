@@ -6,215 +6,218 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        tools:context=".activities_experiments.CreateExperimentActivity">
-
-        <LinearLayout
-            android:id="@+id/name_LL"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/list_info_background"
-            android:orientation="vertical"
-            android:padding="5dp"
-            app:layout_constraintBottom_toTopOf="@id/description_LL"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/textViewNameQueryId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="*What is the name of your experiment?"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/editTextExpName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:maxLength="50"
-                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
-                android:hint="@string/experiment_name_here_hint"
-                android:inputType="textPersonName"
-                android:scrollHorizontally="false" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/description_LL"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/list_info_background"
-            android:orientation="vertical"
-            android:padding="5dp"
-            app:layout_constraintTop_toBottomOf="@id/name_LL">
-
-            <TextView
-                android:id="@+id/textViewDescriptionId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="*Give a brief description of your experiment!"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/editTextEnterDescription"
-                android:layout_width="335dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter description..."
-                android:inputType="textMultiLine"
-                android:maxLength="100" />
-
-
-        </LinearLayout>
-
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/region_LL"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/list_info_background"
-            android:padding="5dp"
-            app:layout_constraintTop_toBottomOf="@id/description_LL">
+            android:layout_height="wrap_content"
+            tools:context=".activities_experiments.CreateExperimentActivity">
 
-            <EditText
-                android:id="@+id/editTextKeywords"
-                android:layout_width="359dp"
+            <LinearLayout
+                android:id="@+id/name_LL"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ, "
-                android:hint="*Enter keywords separated by commas"
-                android:inputType="textMultiLine"
-                app:layout_constraintBottom_toTopOf="@id/editTextMinTrials"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/region_LL" />
-
-
-            <TextView
-                android:id="@+id/textViewMinTrials"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="*Minimum Trials: "
-                app:layout_constraintBottom_toTopOf="@id/checkBoxSubscribe"
-                app:layout_constraintRight_toLeftOf="@+id/editTextMinTrials"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextKeywords" />
-
-            <EditText
-                android:id="@+id/editTextMinTrials"
-                android:layout_width="47dp"
-                android:layout_height="41dp"
-                android:ems="10"
-                android:maxLength="3"
-                android:hint="#"
-                android:inputType="number"
-                app:layout_constraintBottom_toTopOf="@id/checkBoxSubscribe"
-                app:layout_constraintLeft_toRightOf="@+id/textViewMinTrials"
-                app:layout_constraintTop_toBottomOf="@id/editTextKeywords"
-                tools:layout_editor_absoluteX="118dp" />
-
-            <EditText
-                android:id="@+id/editTextRegion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/Region"
-                app:layout_constraintBottom_toTopOf="@id/checkBoxSubscribe"
+                android:background="@drawable/list_info_background"
+                android:orientation="vertical"
+                android:padding="5dp"
+                app:layout_constraintBottom_toTopOf="@id/description_LL"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editTextMinTrials"
-                app:layout_constraintTop_toBottomOf="@id/editTextKeywords" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <CheckBox
-                android:id="@+id/checkBoxSubscribe"
+                <TextView
+                    android:id="@+id/textViewNameQueryId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*What is the name of your experiment?"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editTextExpName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                    android:ems="10"
+                    android:hint="@string/experiment_name_here_hint"
+                    android:inputType="textPersonName"
+                    android:maxLength="50"
+                    android:scrollHorizontally="false" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/description_LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/list_info_background"
+                android:orientation="vertical"
+                android:padding="5dp"
+                app:layout_constraintTop_toBottomOf="@id/name_LL">
+
+                <TextView
+                    android:id="@+id/textViewDescriptionId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*Give a brief description of your experiment!"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/editTextEnterDescription"
+                    android:layout_width="335dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Enter description..."
+                    android:inputType="textMultiLine"
+                    android:maxLength="100" />
+
+
+            </LinearLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/region_LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/list_info_background"
+                android:padding="5dp"
+                app:layout_constraintTop_toBottomOf="@id/description_LL">
+
+                <EditText
+                    android:id="@+id/editTextKeywords"
+                    android:layout_width="359dp"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ, "
+                    android:hint="*Enter keywords separated by commas"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintBottom_toTopOf="@id/editTextMinTrials"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/region_LL" />
+
+
+                <TextView
+                    android:id="@+id/textViewMinTrials"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="*Minimum Trials: "
+                    app:layout_constraintBottom_toTopOf="@id/checkBoxSubscribe"
+                    app:layout_constraintRight_toLeftOf="@+id/editTextMinTrials"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editTextKeywords" />
+
+                <EditText
+                    android:id="@+id/editTextMinTrials"
+                    android:layout_width="47dp"
+                    android:layout_height="41dp"
+                    android:ems="10"
+                    android:hint="#"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    app:layout_constraintBottom_toTopOf="@id/checkBoxSubscribe"
+                    app:layout_constraintLeft_toRightOf="@+id/textViewMinTrials"
+                    app:layout_constraintTop_toBottomOf="@id/editTextKeywords"
+                    tools:layout_editor_absoluteX="118dp" />
+
+                <EditText
+                    android:id="@+id/editTextRegion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Region"
+                    app:layout_constraintBottom_toTopOf="@id/checkBoxSubscribe"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/editTextMinTrials"
+                    app:layout_constraintTop_toBottomOf="@id/editTextKeywords" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSubscribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Subscribe to experiment"
+                    app:layout_constraintBottom_toTopOf="@id/checkBoxGeolocation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editTextMinTrials" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxGeolocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Geolocation enabled"
+                    app:layout_constraintBottom_toTopOf="@id/checkBoxPublish"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/checkBoxSubscribe" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxPublish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Publish on create"
+                    app:layout_constraintBottom_toBottomOf="@+id/region_LL"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxGeolocation" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Subscribe to experiment"
-                app:layout_constraintBottom_toTopOf="@id/checkBoxGeolocation"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/list_info_background"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextMinTrials" />
+                app:layout_constraintTop_toBottomOf="@id/region_LL">
 
-            <CheckBox
-                android:id="@+id/checkBoxGeolocation"
+                <RadioButton
+                    android:id="@+id/radioButtonCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Count" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonNonNegInt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="NonNegInt" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMeasurement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Measurement" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonBinomial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Binomial" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/buttonCreateExperiment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Geolocation enabled"
-                app:layout_constraintBottom_toTopOf="@id/checkBoxPublish"
+                android:text="Create Experiment"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/checkBoxSubscribe" />
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-            <CheckBox
-                android:id="@+id/checkBoxPublish"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Publish on create"
-                app:layout_constraintBottom_toBottomOf="@+id/region_LL"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBoxGeolocation" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/list_info_background"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/region_LL">
-
-            <RadioButton
-                android:id="@+id/radioButtonCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="onRadioButtonClicked"
-                android:text="Count" />
-
-            <RadioButton
-                android:id="@+id/radioButtonNonNegInt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="onRadioButtonClicked"
-                android:text="NonNegInt" />
-
-            <RadioButton
-                android:id="@+id/radioButtonMeasurement"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="onRadioButtonClicked"
-                android:text="Measurement" />
-
-            <RadioButton
-                android:id="@+id/radioButtonBinomial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="onRadioButtonClicked"
-                android:text="Binomial" />
-
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/buttonCreateExperiment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create Experiment"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </LinearLayout>

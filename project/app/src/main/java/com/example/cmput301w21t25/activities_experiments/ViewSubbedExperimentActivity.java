@@ -3,6 +3,9 @@ package com.example.cmput301w21t25.activities_experiments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,8 +13,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.cmput301w21t25.R;
+import com.example.cmput301w21t25.activities_main.CreatedExperimentsActivity;
 import com.example.cmput301w21t25.activities_main.SubbedExperimentsActivity;
 import com.example.cmput301w21t25.activities_forum.ForumActivity;
 import com.example.cmput301w21t25.activities_trials.AddTrialActivity;
@@ -24,6 +29,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
@@ -45,10 +51,14 @@ public class ViewSubbedExperimentActivity extends AppCompatActivity {
     private TrialManager trialManager = new TrialManager();
     private Experiment exp;
 
+
     @Override
     protected void onCreate(Bundle passedData) {
         super.onCreate(passedData);
         setContentView(R.layout.activity_view_subbed_experiment);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         userID = getIntent().getStringExtra("USER_ID");
         expBundle = getIntent().getBundleExtra("EXP_BUNDLE");
@@ -62,6 +72,10 @@ public class ViewSubbedExperimentActivity extends AppCompatActivity {
         TextView minTrials = findViewById(R.id.min_trials_text_view);
         TextView currTrials = findViewById(R.id.current_trials_text_view);
         TextView region = findViewById(R.id.region_text_view);
+
+        Chip owner = findViewById(R.id.owner_chip);
+        owner.setText(exp.getOwner());
+
         experimentManager.FB_UpdateExperimentTextViews(expID,expName,expDesc,expType,minTrials,region);
         trialManager.FB_FetchPublishedTrialCount(exp,currTrials);
 
@@ -98,13 +112,6 @@ public class ViewSubbedExperimentActivity extends AppCompatActivity {
             }
         });
 
-        viewOwnerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FB_FetchOwnerProfile(expID);
-            }
-        });
-
         unsubscribeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,6 +136,13 @@ public class ViewSubbedExperimentActivity extends AppCompatActivity {
                 switchScreens.putExtra("USER_ID", userID);
                 switchScreens.putExtra("EXP", exp);
                 startActivity(switchScreens);
+            }
+        });
+
+        owner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FB_FetchOwnerProfile(expID);
             }
         });
     }
@@ -224,5 +238,45 @@ public class ViewSubbedExperimentActivity extends AppCompatActivity {
         intent.putExtra("USER_ID", userID);
         startActivity(intent);
 
+    }
+
+    /**
+     * This event is menu setup!
+     * @param menu this is the menu being integrated
+     * @return true to indicate there is a menu (return false to turn off)
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.toolbar_menu,menu);
+        return true;
+    }
+
+    /**
+     * This event is for menu item setup
+     * @param item these are items that will be added to the menu
+     * @return @return true to indicate there is this item (return false to turn off)
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.home_button:
+                Intent home = new Intent(ViewSubbedExperimentActivity.this, CreatedExperimentsActivity.class);
+                home.putExtra("USER_ID", userID);
+                startActivity(home);
+                return true;
+            case R.id.settings_button:
+                Intent user_settings = new Intent(ViewSubbedExperimentActivity.this, MyUserProfileActivity.class);
+                user_settings.putExtra("USER_ID", userID);
+                //I think this will work but have to check
+                user_settings.putExtra("TRIAL_PARENT", exp);
+                user_settings.putExtra("prevScreen", "SubbedExperiment");
+                startActivity(user_settings);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

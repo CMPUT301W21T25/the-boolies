@@ -98,24 +98,26 @@ public class CustomListComment extends ArrayAdapter<Comment> {
 
         if (comment.getCommentDepth() > 0) {
             replyGraphic.setPadding((50 * comment.getCommentDepth()) + 36, 0, 0, 0);
-            newThreadGraphic.setPadding((50 * comment.getCommentDepth()) + 36, 0, 0, 0);
+            //newThreadGraphic.setPadding((50 * comment.getCommentDepth()) + 36, 0, 0, 0);
             line1.setPadding((50 * comment.getCommentDepth()), 0, 0, 0);
             line2.setPadding((50 * comment.getCommentDepth()), 0, 0, 0);
             line3.setPadding((50 * comment.getCommentDepth()), 0, 0, 0);
-            commentHeader.setPadding(4, 0, 0, 0);
+            commentHeader.setPadding(0, 0, 0, 0);
             commenterName.setPadding((50 * comment.getCommentDepth()) +36, 0, 0, 0);
             commentDate.setPadding((50 * comment.getCommentDepth()) +36, 0, 0, 0);
             commentContent.setPadding((50 * comment.getCommentDepth()) +36, 0, 0, 0);
 
         }
+
         else {
-            replyGraphic.setPadding(0, 0, 0, 0);
-            newThreadGraphic.setPadding(0, 0, 0, 0);
-            commentHeader.setPadding(0, 0, 0, 0);
-            commenterName.setPadding(0, 0, 0, 0);
-            commentDate.setPadding(0, 0, 0, 0);
-            commentContent.setPadding(0, 0, 0, 0);
+            //replyGraphic.setPadding(0, 0, 0, 0);
+            newThreadGraphic.setPadding(36, 0, 0, 0);
+            commentHeader.setPadding(130, 0, 0, 0);
+            commenterName.setPadding(36, 0, 0, 0);
+            commentDate.setPadding(36, 0, 0, 0);
+            commentContent.setPadding(36, 0, 0, 0);
         }
+
         /*indent.setWidth(10 * comment.getCommentDepth());
         Log.d("COMMENT_DEPTH", String.valueOf(comment.getCommentDepth()));
         //indent.setPadding(10 * comment.getCommentDepth(), 0, 0, 0);

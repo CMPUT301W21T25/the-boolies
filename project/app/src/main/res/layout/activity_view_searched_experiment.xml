@@ -34,23 +34,30 @@
                 android:textColor="@color/custom_Blue_dark"
                 android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/exp_type_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textSize="12sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/exp_type_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="24dp"
+                    android:text="TextView"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/owner_chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/custom_Blue_dark"
+                    app:chipBackgroundColor="@color/custom_Blue_light" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
-        <Button
-            android:id="@+id/exp_owner_button"
-            android:layout_width="93dp"
-            android:layout_height="54dp"
-            android:layout_marginRight="10dp"
-            android:text="Owner"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
@@ -61,10 +68,10 @@
         android:visibility="gone" />
 
     <LinearLayout
-        android:layout_gravity="center"
         android:id="@+id/info_linear_layout"
-        android:layout_width="363dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="vertical"
         android:padding="10dp"
         android:paddingTop="24dp">

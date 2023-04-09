@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cmput301w21t25.R;
 import com.example.cmput301w21t25.activities_experiments.ViewSearchedExperimentActivity;
+import com.example.cmput301w21t25.activities_experiments.ViewSubbedExperimentActivity;
 import com.example.cmput301w21t25.activities_forum.ForumActivity;
 import com.example.cmput301w21t25.activities_main.CreatedExperimentsActivity;
 import com.example.cmput301w21t25.activities_main.SubbedExperimentsActivity;
@@ -147,6 +148,10 @@ public class MyUserProfileActivity extends AppCompatActivity {
                 break;
             case "QR":
                 intent = new Intent(MyUserProfileActivity.this, MenuQRActivity.class);
+                intent.putExtra("TRIAL_PARENT", exp);
+                intent.putExtra("CODE_TYPE", codeType);
+            case "SubbedExperiment":
+                intent = new Intent(MyUserProfileActivity.this, ViewSubbedExperimentActivity.class);
                 intent.putExtra("TRIAL_PARENT", exp);
                 intent.putExtra("CODE_TYPE", codeType);
             default:

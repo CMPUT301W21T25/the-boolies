@@ -27,6 +27,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
@@ -66,6 +67,10 @@ public class ViewSearchedExperimentActivity extends AppCompatActivity {
         TextView currTrials = findViewById(R.id.current_trials_text_view);
         TextView region = findViewById(R.id.region_text_view);
         TextView geoLoc = findViewById(R.id.geoLoc_text_view);
+
+        Chip owner = findViewById(R.id.owner_chip);
+        owner.setText(exp.getOwner());
+
         final Button commentsButton = findViewById(R.id.comments_button);
         final Button dataButton = findViewById(R.id.view_data_button);
         final Button subscribeButton = findViewById(R.id.subscribe_button);
@@ -91,13 +96,6 @@ public class ViewSearchedExperimentActivity extends AppCompatActivity {
             }
         });
 
-        ownerViewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FB_FetchOwnerProfile(expID);
-            }
-        });
-
         commentsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,6 +113,13 @@ public class ViewSearchedExperimentActivity extends AppCompatActivity {
                 switchScreens.putExtra("USER_ID", userID);
                 switchScreens.putExtra("EXP", exp);
                 startActivity(switchScreens);
+            }
+        });
+
+        owner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FB_FetchOwnerProfile(expID);
             }
         });
     }

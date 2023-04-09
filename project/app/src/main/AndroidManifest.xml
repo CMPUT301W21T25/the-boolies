@@ -26,8 +26,6 @@
             android:stateNotNeeded="true"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".activities_trials.ChooseConductActivity" />
-        <activity android:name=".activities_qr.CountQRActivity" />
-        <activity android:name=".activities_qr.DisplayQRActivity" />
         <activity android:name=".activities_qr.RegisterBarcodeActivity" />
         <!--
          set this to be the icon image!
